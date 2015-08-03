@@ -1,0 +1,38 @@
+[
+  {
+	"name": "username",
+	"label": "Username",
+	"type": "String",
+	"required": false
+  },
+  {
+	"name": "password",
+	"label": "Password",
+	"type": "String",
+	"required": false
+  },
+  {
+	"name": "host",
+	"label": "Host",
+	"type": "String",
+	"required": true
+  },
+  {
+	"name": "port",
+	"label": "Port",
+	"type": "Number",
+	"required": true
+  },
+  {
+	"name": "database",
+	"label": "Database",
+	"type": "String",
+	"required": true
+  },
+  {
+	"name": "table",
+	"label": "Table",
+	"type": "String",
+	"required": true
+  }
+]
