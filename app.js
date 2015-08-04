@@ -3,14 +3,13 @@
 /*
  * Initialize storage.
  */
-var Storage = require('./storage'),
-	storage = new Storage(),
+var platform = require('./platform'),
 	connection;
 
 /*
  * Listen for the ready event.
  */
-storage.on('ready', function (options) {
+platform.on('ready', function (options) {
 	/*
 	 * Connect to the database based on the options provided. See config.json
 	 *
@@ -32,6 +31,6 @@ storage.on('ready', function (options) {
 /*
  * Listen for the data event.
  */
-storage.on('data', function (data) {
+platform.on('data', function (data) {
 	// TODO: Send data to the database. Use the already initialized connection variable above.
 });

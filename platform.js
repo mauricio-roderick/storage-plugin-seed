@@ -3,18 +3,18 @@
 var inherits     = require('util').inherits,
 	EventEmitter = require('events').EventEmitter;
 
-function Storage() {
-	if (!(this instanceof Storage)) {
-		return new Storage();
+function Platform() {
+	if (!(this instanceof Platform)) {
+		return new Platform();
 	}
 
 	EventEmitter.call(this);
-	Storage.init.call(this);
+	Platform.init.call(this);
 }
 
-inherits(Storage, EventEmitter);
+inherits(Platform, EventEmitter);
 
-Storage.init = function () {
+Platform.init = function () {
 	var self = this;
 
 	process.on('message', function (m) {
@@ -25,7 +25,7 @@ Storage.init = function () {
 	});
 };
 
-Storage.prototype.sendLog = function(title, description) {
+Platform.prototype.sendLog = function(title, description) {
 	process.send({
 		type: 'log',
 		data: {
@@ -35,7 +35,7 @@ Storage.prototype.sendLog = function(title, description) {
 	});
 };
 
-Storage.prototype.sendError = function(error) {
+Platform.prototype.sendError = function(error) {
 	process.send({
 		type: 'error',
 		data: {
@@ -70,4 +70,4 @@ process.on('SIGTERM', function () {
 	});
 });
 
-module.exports = Storage;
+module.exports = new Platform();
