@@ -1,8 +1,5 @@
 'use strict';
 
-/*
- * Initialize storage.
- */
 var platform = require('./platform'),
 	connection;
 
@@ -25,12 +22,12 @@ platform.on('ready', function (options) {
 	 * Note: Option Names are based on what you specify on the config.json.
 	 */
 
-	// TODO: Initialize the connection to your database here. Assign the resulting connection object to the connection variable above.
+	// TODO: Initialize the connection to your database here.
 });
 
 /*
  * Listen for the data event.
  */
 platform.on('data', function (data) {
-	// TODO: Send data to the database. Use the already initialized connection variable above.
+	// TODO: Insert the data to the database using the initialized connection.
 });
