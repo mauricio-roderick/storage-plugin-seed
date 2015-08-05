@@ -8,6 +8,26 @@ function Platform() {
 		return new Platform();
 	}
 
+	var self = this;
+	var _notifyExit = function () {
+		process.send({
+			type: 'exit'
+		});
+	};
+
+	process.on('uncaughtException', function (error) {
+		console.error('Uncaught Exception', error);
+		self.handleException(error);
+	});
+
+	process.on('exit', function () {
+		_notifyExit();
+	});
+
+	process.on('SIGTERM', function () {
+		_notifyExit();
+	});
+
 	EventEmitter.call(this);
 	Platform.init.call(this);
 }
@@ -25,7 +45,7 @@ Platform.init = function () {
 	});
 };
 
-Platform.prototype.sendLog = function(title, description) {
+Platform.prototype.log = function (title, description) {
 	process.send({
 		type: 'log',
 		data: {
@@ -35,7 +55,9 @@ Platform.prototype.sendLog = function(title, description) {
 	});
 };
 
-Platform.prototype.sendError = function(error) {
+Platform.prototype.handleException = function (error) {
+	console.error(error);
+
 	process.send({
 		type: 'error',
 		data: {
@@ -45,29 +67,5 @@ Platform.prototype.sendError = function(error) {
 		}
 	});
 };
-
-process.on('uncaughtException', function (error) {
-	console.error('Uncaught Exception', error);
-	process.send({
-		type: 'error',
-		data: {
-			name: error.name,
-			message: error.message,
-			stack: error.stack
-		}
-	});
-});
-
-process.on('exit', function () {
-	process.send({
-		type: 'exit'
-	});
-});
-
-process.on('SIGTERM', function () {
-	process.send({
-		type: 'terminate'
-	});
-});
 
 module.exports = new Platform();
