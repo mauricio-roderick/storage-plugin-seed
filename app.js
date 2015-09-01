@@ -6,7 +6,7 @@ var platform = require('./platform'),
 /*
  * Listen for the ready event.
  */
-platform.on('ready', function (options) {
+platform.once('ready', function (options) {
 	/*
 	 * Connect to the database based on the options provided. See config.json
 	 *
