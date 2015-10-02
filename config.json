@@ -1,38 +1,12 @@
-[
-  {
-	"name": "username",
-	"label": "Username",
-	"type": "String",
-	"required": false
-  },
-  {
-	"name": "password",
-	"label": "Password",
-	"type": "String",
-	"required": false
-  },
-  {
-	"name": "host",
-	"label": "Host",
+{
+  "config_field1": {
+	"label": "Config Field 1",
 	"type": "String",
 	"required": true
   },
-  {
-	"name": "port",
-	"label": "Port",
+  "config_field2": {
+	"label": "Config Field 2",
 	"type": "Number",
 	"required": true
-  },
-  {
-	"name": "database",
-	"label": "Database",
-	"type": "String",
-	"required": true
-  },
-  {
-	"name": "table",
-	"label": "Table",
-	"type": "String",
-	"required": true
   }
-]
+}

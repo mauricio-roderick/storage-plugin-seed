@@ -4,6 +4,14 @@ var platform = require('./platform'),
 	connection;
 
 /*
+ * Listen for the data event.
+ */
+platform.on('data', function (data) {
+	// TODO: Insert the data to the database using the initialized connection.
+	console.log(data);
+});
+
+/*
  * Listen for the ready event.
  */
 platform.once('ready', function (options) {
@@ -23,11 +31,6 @@ platform.once('ready', function (options) {
 	 */
 
 	// TODO: Initialize the connection to your database here.
-});
-
-/*
- * Listen for the data event.
- */
-platform.on('data', function (data) {
-	// TODO: Insert the data to the database using the initialized connection.
+	console.log(options);
+	platform.notifyReady();
 });
