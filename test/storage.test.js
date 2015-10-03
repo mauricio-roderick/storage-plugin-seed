@@ -12,7 +12,7 @@ describe('Storage', function () {
 	this.slow(5000);
 
 	after('terminate child process', function () {
-		channel.kill('SIGKILL');
+		storage.kill('SIGKILL');
 	});
 
 	describe('#spawn', function () {
