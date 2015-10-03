@@ -11,6 +11,10 @@ var cp     = require('child_process'),
 describe('Storage', function () {
 	this.slow(5000);
 
+	after('terminate child process', function () {
+		channel.kill('SIGKILL');
+	});
+
 	describe('#spawn', function () {
 		it('should spawn a child process', function () {
 			assert.ok(storage = cp.fork(process.cwd()), 'Child process not spawned.');
