@@ -16,7 +16,7 @@ platform.on('data', function (data) {
  */
 platform.once('ready', function (options) {
 	/*
-	 * Connect to the database based on the options provided. See config.json
+	 * Connect to the database or file storage service based on the options provided. See config.json
 	 *
 	 * Sample Parameters:
 	 *
