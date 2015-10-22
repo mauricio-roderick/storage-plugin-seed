@@ -12,6 +12,14 @@ platform.on('data', function (data) {
 });
 
 /*
+ * Event to listen to in order to gracefully release all resources bound to this service.
+ */
+platform.on('close', function () {
+	// TODO: Release all resources and close connections etc.
+	platform.notifyClose();
+});
+
+/*
  * Listen for the ready event.
  */
 platform.once('ready', function (options) {
