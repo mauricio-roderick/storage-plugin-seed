@@ -1,3 +1,5 @@
+![Reekoh Logo](https://reekoh-my.sharepoint.com/personal/bsicam_reekoh_com/_layouts/15/guestaccess.aspx?guestaccesstoken=CINWTIG%2fK%2beg9Mrlpl3KoXH7PytvmFE%2b%2bsBnm6u%2fWwg%3d&docid=021898c83e05e4d34a5b2573508f21854)
+
 # Storage Plugin Seed
 
 [![Build Status](https://travis-ci.org/Reekoh/storage-plugin-seed.svg)](https://travis-ci.org/Reekoh/storage-plugin-seed)
