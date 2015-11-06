@@ -15,8 +15,19 @@ platform.on('data', function (data) {
  * Event to listen to in order to gracefully release all resources bound to this service.
  */
 platform.on('close', function () {
-	// TODO: Release all resources and close connections etc.
-	platform.notifyClose();
+	var domain = require('domain');
+	var d = domain.create();
+
+	d.on('error', function(error) {
+		console.error(error);
+		platform.handleException(error);
+		platform.notifyClose();
+	});
+
+	d.run(function() {
+		// TODO: Release all resources and close connections etc.
+		platform.notifyClose(); // Notify the platform that resources have been released.
+	});
 });
 
 /*
