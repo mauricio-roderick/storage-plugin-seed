@@ -282,10 +282,9 @@ A plugin package/zip file should always contain the following files:
 - package.json
 - config.json - if no additional configuration parameters are needed for the plugin to run, just have an empty object as the content
 
-
 After this, the plugin can now be zipped.
 
-**NOTE:** Only include the contents of your project. Do not zip the root folder of your project.
+**NOTE:** Only include the contents of your project. Do not zip the root folder and do not include the node_modules folder of your project in the zip file.
 
 ## Plugin Store
 

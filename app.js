@@ -57,4 +57,5 @@ platform.once('ready', function (options) {
 	// TODO: Initialize the connection to your database here.
 	console.log(options);
 	platform.notifyReady();
+	platform.log('Storage has been initialized.');
 });
