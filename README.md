@@ -181,6 +181,13 @@ __Example__
         "required": true,
         "help": "Kindly specify API Key to use."
     },
+    // Will be transformed as a password input on the front-end
+    "apisecret": {
+        "label": "API Secret",
+        "type": "Password",
+        "required": true,
+        "help": "Kindly specify API Secret to use."
+    },
     // Will be transformed as a text input on the front-end
     "clientid": {
         "label": "Client ID",
@@ -253,6 +260,7 @@ __Example__
 ```javascript
 platform.once('ready', function (options) {
    console.log(options.apikey); // As specified in the config.json file
+   console.log(options.apisecret); // As specified in the config.json file
    console.log(options.clientid); // As specified in the config.json file
    console.log(options.perform_handshake); // As specified in the config.json file
    console.log(options.service_type); // As specified in the config.json file
