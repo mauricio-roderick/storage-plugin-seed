@@ -5,7 +5,7 @@
 'use strict';
 
 var cp     = require('child_process'),
-	assert = require('assert'),
+	should = require('should'),
 	storage;
 
 describe('Storage', function () {
@@ -23,7 +23,7 @@ describe('Storage', function () {
 
 	describe('#spawn', function () {
 		it('should spawn a child process', function () {
-			assert.ok(storage = cp.fork(process.cwd()), 'Child process not spawned.');
+			should.ok(storage = cp.fork(process.cwd()), 'Child process not spawned.');
 		});
 	});
 
@@ -45,7 +45,7 @@ describe('Storage', function () {
 					}
 				}
 			}, function (error) {
-				assert.ifError(error);
+				should.ifError(error);
 			});
 		});
 	});
